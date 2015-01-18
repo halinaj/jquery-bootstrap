@@ -1,0 +1,35 @@
+.bg-container
+{
+    width: 732px;
+    height: 247px;
+    position: absolute;
+    right: 0;
+    bottom: 41px;
+    background-color: black;
+}
+.rotating-item {
+    display: none;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+}
+
+.bgr1
+{
+    background-image: url(assets/img1.jpg);
+}
+.bgr2
+{
+    background-image: url(assets/img2.jpg);
+}
+.bgr3
+{
+    background-image: url(assets/img3.jpg);
+}

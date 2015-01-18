@@ -1,0 +1,14 @@
+@media all and (max-width: 768px) {
+    body {
+        background-image: none;
+    }
+
+    .head {
+        background-image: none;
+        height: auto;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+}

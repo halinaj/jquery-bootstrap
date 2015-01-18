@@ -1,0 +1,76 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: url(../assets/header/bg-strip5.png), url(../assets/header/pattern-89ds.png);
+    background-repeat: repeat-x, repeat;
+    background-position: top;
+}
+
+.head {
+    position: relative;
+    height: 340px;
+    background-image: url(../assets/header/logo3.png), url(../assets/header/bg-top-5.png);
+    background-repeat: no-repeat;
+    background-position: left top, right top;
+}
+
+/*
+    nav
+*/
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+nav a {
+    font-family: "Vampiro One";
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.nav li.menu-active > a {
+    font-weight: bold;
+    color: #BC0A0A !important;
+}
+
+.btn-jump-to-top {
+    position: fixed;
+    z-index: 1;
+    right: 50%;
+    margin-right: -20px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(0, 0, 0, .2);
+    color: rgba(0, 0, 0, .5);
+    cursor: pointer;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.team .img-thumbnail {
+    cursor: pointer;
+    height: 180px;
+}
+
+.sticky {
+    position: fixed;
+    z-index: 1;
+    background-color: #ffffff;
+    border-bottom: 5px solid #BC0A0A;
+}
+.sticky .navbar-brand {
+    padding-left: 25px;
+}

@@ -1,0 +1,97 @@
+<div class="contact">
+
+    <h3><span class="text-danger">Napisz co Cię męczy!</span></h3>
+    <br/>
+
+    <div class="alert alert-success hidden">
+        <span class="glyphicon glyphicon-send"></span>
+        <strong>Sukces! Formularz został przesłany</strong>
+    </div>
+    <div class="alert alert-danger hidden">
+        <span class="glyphicon glyphicon-alert"></span>
+        <strong>Error! Proszę wypełnić wymagane pola</strong>
+    </div>
+
+    <div class="row">
+        <form action="" name="contactForm" id="contactForm">
+            <div class="form-group col-lg-6">
+                <label for="firstName">Twoje imię:</label>
+                <input type="text" class="form-control" name="firstName" id="firstName" required="required"/>
+
+                <div class="error text-danger invisible text-danger">Pole wymagane</div>
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label for="lastName">Twoje nazwisko:</label>
+                <input type="text" class="form-control" name="lastName" id="lastName" required="required"/>
+
+                <div class="error text-danger invisible">Pole wymagane</div>
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label for="email">Twój email:</label>
+                <input type="email" class="form-control" name="email" id="email" required="required"/>
+
+                <div class="error text-danger invisible">Pole wymagane. Adres e-mail jest nieprawidłowy</div>
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label for="gender">Twoja płeć:</label>
+                <select class="form-control" name="gender" id="gender" required="required">
+                    <option value="0"></option>
+                    <option value="1">mężczyzna</option>
+                    <option value="2">kobieta</option>
+                </select>
+
+                <div class="error text-danger invisible">Pole wymagane</div>
+            </div>
+
+            <div class="form-group col-lg-12">
+                <label for="desc">Wiadomość:</label>
+                <textarea class="form-control" name="desc" id="desc" cols="30" rows="3" required="required"></textarea>
+
+                <div class="error text-danger invisible">Pole wymagane</div>
+            </div>
+
+            <div class="form-group col-lg-12">
+                <button type="button" class="btn btn-default pull-right">
+                    <i class="glyphicon glyphicon-send"></i>
+                    Wyślij
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+
+    var successInfo = $('.contact .alert-success');
+    var failInfo = $('.contact .alert-danger');
+
+    $('.btn').on('click', validateForm);
+    var form = document.contactForm;
+
+    function validateForm() {
+        var validate = new Validate(form);
+
+        if (validate.formIsValid) {
+            successInfo.removeClass('hidden');
+            failInfo.addClass('hidden');
+
+
+            $.post('http://js.edu.pl/kurs/php/sendData.php',
+            {name: form.firstName.value})
+                    .done(function(data){
+                        console.log(data);
+                        alert('data loaded:' + data);
+                    })
+
+            validate.clearAll();
+        } else {
+            successInfo.addClass('hidden');
+            failInfo.removeClass('hidden');
+        }
+    }
+
+</script>
